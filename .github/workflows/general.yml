@@ -6,11 +6,11 @@ on:
   # this specific branch (a.k.a. book chapter).
   push:
     branches:
-      - root-chapter-03-part1
+      - main
   pull_request:
     types: [ opened, synchronize, reopened ]
     branches:
-      - root-chapter-03-part1
+      - main
 
 env:
   CARGO_TERM_COLOR: always
@@ -27,7 +27,7 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: postgres
         ports:
-          - 5432:5432
+          - 6543:5432
     env:
       SQLX_VERSION: 0.5.5
       SQLX_FEATURES: postgres
@@ -107,7 +107,7 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: postgres
         ports:
-          - 5432:5432
+          - 6543:5432
     env:
       SQLX_VERSION: 0.5.5
       SQLX_FEATURES: postgres
@@ -165,7 +165,7 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: postgres
         ports:
-          - 5432:5432
+          - 6543:5432
     env:
       SQLX_VERSION: 0.5.5
       SQLX_FEATURES: postgres
